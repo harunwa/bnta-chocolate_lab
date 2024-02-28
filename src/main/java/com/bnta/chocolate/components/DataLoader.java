@@ -10,7 +10,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Dataloader implements ApplicationRunner {
+public class DataLoader implements ApplicationRunner {
 
     @Autowired
     ChocolateService chocolateService;
@@ -26,11 +26,12 @@ public class Dataloader implements ApplicationRunner {
         Chocolate chocolate1 = new Chocolate("Cadbury", 60, estate1 );
         Chocolate chocolate2 = new Chocolate("Mars", 50, estate2);
 
+        estateService.saveEstate(estate1);
+        estateService.saveEstate(estate2);
+
         chocolateService.saveChocolate(chocolate1);
         chocolateService.saveChocolate(chocolate2);
 
-        estateService.saveEstate(estate1);
-        estateService.saveEstate(estate2);
 
     }
 

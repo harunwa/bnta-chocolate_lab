@@ -6,7 +6,7 @@ import javax.annotation.processing.Generated;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "chocolate")
+@Table(name = "chocolates")
 public class Chocolate {
 
 @Id
@@ -22,7 +22,6 @@ public class Chocolate {
     @ManyToOne
     @JoinColumn(name = "estate_id")
     @JsonIgnoreProperties({"chocolate"})
-    @Column(name = "estate")
     private Estate estate;
 
     public Chocolate(String name, int cocoaPercentage, Estate estate) {
