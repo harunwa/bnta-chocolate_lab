@@ -27,5 +27,5 @@ public class EstateService {
         estateRepository.save(estate);
         return estate;
     }
-    
+
 }
